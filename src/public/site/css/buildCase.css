@@ -1,0 +1,124 @@
+
+#container{
+    width: 100%;
+    min-height: 1500px;
+    height: auto;
+    margin: 50px auto;
+    /* border: 1px solid black; */
+}
+
+.content__main{
+    max-width: 1280px;
+    /* min-height: 1500px; */
+    /* height: auto; */
+    margin: auto;
+}
+.container_build{
+    max-width: 1280px;
+    min-height: 1500px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content:space-between;
+    margin-top:60px;
+}
+.product_img{
+    width: 100px;
+    height: 100px;
+}
+.product_name{
+    margin-top:20px;
+    overflow: hidden;
+    width: 200px;
+}
+.btn-secondary{
+    background-color: #e93434;
+}
+.btn-secondary:hover{
+    background-color: #fff;
+    color:#e93434;
+}
+.btn-secondary:focus{
+    background-color: #fff;
+    color:#e93434;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.card{
+    width: 317px;
+}
+.card-img{
+    margin-left: 104px;
+    width: 110px !important;
+    height: 110px !important;
+}
+.card-price{
+    color:  #e93434;
+    /* background-color: #e93434; */
+    /* padding: 20px; */
+    margin-top: -20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.card{
+    margin-top:120px !important;
+}
+.card-name{
+   font-size:12px;
+   color: black;
+   text-decoration: none;
+   line-height: 32px;
+   width: 260px;
+   height:100px;
+   margin-left: 28px;
+   overflow: hidden;
+}
+.accordion-button{
+    width:170px;
+}
+.container__hotdeal-main{
+    margin-top: -100px !important;
+    width: 1300px;
+}
+.accordion-flush .accordion-item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    border-bottom: 0;
+}
+.accordion{
+    z-index: 1000;
+    /* width: 1180px; */
+}
+.accordion-item {
+    border:none;
+    margin-top: 60px;
+}
+.accordion-button{
+    border:1px solid #e93434;
+}
+.accordion-button:focus{
+    background-color: #e93434;
+    color: #fff;
+    border:none;
+    box-shadow: none;
+}
+.build_case{
+    margin-top:100px;
+    display:flex;
+}
+#case,#ram,#main{
+    margin-top: 250px;
+}
+#cpu,#screen{
+    margin-top: 500px;
+
+}
+.item{
+    border:1px solid #ccc;
+    width: 150px;
+    height:150px;
+    margin-top:0;
+}

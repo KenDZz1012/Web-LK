@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layout/head.ejs", {title:"Tuyển Dụng"}) %>   
+    <link rel="stylesheet" href="/static/site/css/recruit.css">
+    <link rel="shortcut icon" href="/static/site/logo/header--logo.png">
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+        <div>
+            <a href="index.html">
+                <img src="/static/site/logo/logo1.png" alt="" class="header-logo">
+            </a>
+        </div>
+        <div class="header__title">
+            Let's Grow Together
+        </div>
+        <p class="header__text">
+            LK Gear tin rằng nhân viên là cốt lõi của bền vững, chúng tôi luôn quan tâm đến lộ trình phát triển nghề nghiệp của bạn. Môi trường làm việc tại LK Gear được xây dựng đa dạng, đề cao sự sáng tạo và thay đổi linh hoạt theo xu thế của thị trường. Mỗi nhân viên đều được trao cơ hội như nhau, chúng tôi tin rằng dù khởi đầu ra sao thì nhiệt huyết và khát khao học hỏi vẫn sẽ quyết định vị trí cuối cùng của bạn ở LK Gear.
+        </p>
+    </div>
+
+    <!-- container -->
+    <div id="container">
+        <div class="container__title">
+            Vị Trí Tuyển Dụng
+            <hr class="line">
+        </div>
+        <div class="container__recruit">
+            <ul class="container__recruit-list">
+                <%for(x in positions){%>
+                <li class="container__recruit-item">
+                    <div class="recruit__item-text">
+                        <div class="recruit__item-title">
+                            <%=positions[x].name%>
+                        </div>
+                        <div class="recruit__item-subtext">
+                            Toàn thời gian
+                            <img src="/static/site/logo/iconfinder_Location_728975.svg" class="location-logo">
+                            <span class="location-text">LK Gear Trần Duy Hưng</span>
+                        </div>
+                    </div>
+                    <div class="recruit__item-btn">
+                        <a href="/site/sign/<%=positions[x]._id%>">
+                            <input type="button" class="btn" value="Ứng Tuyển Ngay">
+                        </a>
+                    </div>
+                </li>
+                <%}%>
+
+                <!-- <li class="container__recruit-item">
+                    <div class="recruit__item-text">
+                        <div class="recruit__item-title">
+                            Quản Lý Showroom
+                        </div>
+                        <div class="recruit__item-subtext">
+                            Toàn thời gian
+                            <img src="/static/site/logo/iconfinder_Location_728975.svg" class="location-logo">
+                            <span class="location-text">LK Gear Trần Duy Hưng</span>
+                        </div>
+                    </div>
+                    <div class="recruit__item-btn">
+                        <a href="">
+                            <input type="button" class="btn" value="Ứng Tuyển Ngay">
+                        </a>
+                    </div>
+                </li>
+                <li class="container__recruit-item">
+                    <div class="recruit__item-text">
+                        <div class="recruit__item-title">
+                            Cameraman
+                        </div>
+                        <div class="recruit__item-subtext">
+                            Toàn thời gian
+                            <img src="/static/site/logo/iconfinder_Location_728975.svg" class="location-logo">
+                            <span class="location-text">LK Gear Trần Duy Hưng</span>
+                        </div>
+                    </div>
+                    <div class="recruit__item-btn">
+                        <a href="">
+                            <input type="button" class="btn" value="Ứng Tuyển Ngay">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="container__recruit-list">
+                <li class="container__recruit-item">
+                    <div class="recruit__item-text">
+                        <div class="recruit__item-title">
+                            Nhân Viên Bảo Vệ
+                        </div>
+                        <div class="recruit__item-subtext">
+                            Toàn thời gian
+                            <img src="/static/site/logo/iconfinder_Location_728975.svg" class="location-logo">
+                            <span class="location-text">LK Gear Trần Duy Hưng</span>
+                        </div>
+                    </div>
+                    <div class="recruit__item-btn">
+                        <a href="">
+                            <input type="button" class="btn" value="Ứng Tuyển Ngay">
+                        </a>
+                    </div>
+                </li>
+                <li class="container__recruit-item">
+                    <div class="recruit__item-text">
+                        <div class="recruit__item-title">
+                            Quản Lý Sản Phẩm
+                        </div>
+                        <div class="recruit__item-subtext">
+                            Toàn thời gian
+                            <img src="/static/site/logo/iconfinder_Location_728975.svg" class="location-logo">
+                            <span class="location-text">LK Gear Trần Duy Hưng</span>
+                        </div>
+                    </div>
+                    <div class="recruit__item-btn">
+                        <a href="">
+                            <input type="button" class="btn" value="Ứng Tuyển Ngay">
+                        </a>
+                    </div>
+                </li>
+                <li class="container__recruit-item">
+                    <div class="recruit__item-text">
+                        <div class="recruit__item-title">
+                            Nhân Viên Kho Hàng
+                        </div>
+                        <div class="recruit__item-subtext">
+                            Toàn thời gian
+                            <img src="/static/site/logo/iconfinder_Location_728975.svg" class="location-logo">
+                            <span class="location-text">LK Gear Trần Duy Hưng</span>
+                        </div>
+                    </div>
+                    <div class="recruit__item-btn">
+                        <a href="">
+                            <input type="button" class="btn" value="Ứng Tuyển Ngay">
+                        </a>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+        <div class="container__reason">
+            <div class="container__reason-title">
+                Why Choose LK Gear?
+            </div>
+            <ul class="container__reason-list">
+                <li class="container__reason-item">
+                        <div class="container__reason-item-title">
+                            MÔI TRƯỜNG LÀM VIỆC
+                        </div>
+                        <p class="container__reason-text">
+                             Năng động, thân thiện, cởi mở, nhiệt huyết, đầy đam mê và đồng cảm giữa những nhân viên với nhau, là nơi nhân viên LK Gear được cảm thấy tin tưởng và chia sẻ thông tin với nhau để thể hiện hết khả năng sáng tạo và gắn bó lâu dài với công ty.
+                        </p>
+
+                </li>
+                <li class="container__reason-item">
+                    <div class="container__reason-item-title">
+                        ĐỘI NGŨ LÃNH ĐẠO
+                    </div>
+                    <p class="container__reason-text">
+                        Có tầm nhìn và đưa việc thực hiện mục tiêu đạt tới tiêu chuẩn cao hơn. Có mối liên kết chặt chẽ với cấp nhân viên, luôn cùng đồng hành với nhân viên và cùng động viên, khích lệ, định hướng và hỗ trợ nhân viên đạt được mục tiêu đã đề ra.                    </p>
+
+                </li>
+                <li class="container__reason-item">
+                    <div class="container__reason-item-title">
+                        VĂN HÓA VÀ GIÁ TRỊ
+                    </div>
+                    <p class="container__reason-text">
+                        Tại LK Gear bạn sẽ được trải nghiệm văn hóa làm việc hoàn toàn mới, đây sẽ là đòn bẩy để tạo và khẳng định giá trị của bản thân.                    </p>
+
+                </li>
+                <li class="container__reason-item">
+                    <div class="container__reason-item-title">
+                        CƠ HỘI PHÁT TRIỂN
+                    </div>
+                    <p class="container__reason-text">
+                        LK Gear luôn coi trọng sự đóng góp và luôn cam kết đầu tư vào sự phát triển của nhân viên. Sự phát triển của nhân viên là kiến tạo tương lai của LK Gear.                    </p>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <%- include("layout/footer.ejs") %>
+
+</body>
+</html>

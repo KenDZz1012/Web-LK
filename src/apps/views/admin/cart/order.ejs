@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>CSS 01</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+
+<p>
+
+        <b>Khách hàng:</b><%=cart.name%><br>
+        <b>Điện thoại:</b><%=cart.sdt%><br>
+        <b>Địa chỉ:</b> <%=cart.add%><br>
+
+</p>
+
+<table border="1" cellspacing="0" cellpadding="10" bordercolor="#305eb3" width="100%">
+	<tr bgcolor="#305eb3">
+    	<td width="70%"><b><font color="#FFFFFF">Sản phẩm</font></b></td>
+        <td width="10%"><b><font color="#FFFFFF">Số lượng</font></b></td>
+        <td width="20%"><b><font color="#FFFFFF">Tổng tiền</font></b></td>
+    </tr>
+    <tr>
+        <% for(let item of items){%>
+        <%totalPrice+=item.qty*item.price%>
+    	<td width="70%"><%=item.name%></td>
+        <td width="10%"><%=item.qty%></td>
+        <td width="20%"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(item.qty*item.price)%></td>
+    </tr>
+    <tr>
+    	<td colspan="2" width="70%"></td>
+        <td width="20%"><b><font color="#FF0000"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(totalPrice)%></font></b></td>
+    </tr>
+    <% }%>
+</table>
+<a href="/del_cart/<%=cart.id%>" class="btn btn-danger" style="background-color: #e93434;margin-top: 20px;
+padding: 9px;
+text-decoration: none;
+color: white;">Giao xong<i class="glyphicon glyphicon-remove"></i></a>
+</body>
+</html>

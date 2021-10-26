@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layout/head.ejs", {title:"Trang Chủ"}) %>
+    <link rel="stylesheet" href="/static/site/css/main.css">
+    <script src="/static/site/js/jquery-3.6.0.js"></script>
+    <script src="/static/site/js/index.js"></script>
+    <script src="/static/site/js/pag.js"></script>
+    <script src="/static/site/js/wow.min.js"></script>
+    <link rel="stylesheet" href="/static/site/css/animate.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        var wow = new WOW(
+  {
+    boxClass:     'wow',      // animated element css class (default is wow)
+    animateClass: 'animated', // animation css class (default is animated)
+    offset:       2,          // distance to the element when triggering the animation (default is 0)
+    mobile:       true,       // trigger animations on mobile devices (default is true)
+    live:         true,       // act on asynchronously loaded content (default is true)
+    callback:     function(box) {
+      // the callback is fired every time an animation is started
+      // the argument that is passed in is the DOM node being animated
+    },
+    scrollContainer: null,    // optional scroll container selector, otherwise use window,
+    resetAnimation: true,     // reset animation on end (default is true)
+  }
+);
+wow.init();
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- header -->
+    <div id="header">
+        <%- include("layout/header.ejs") %>
+        <%- include("layout/menu.ejs") %>
+    </div>
+    <!-- container -->
+    <div id="container">
+    <%- include("layout/slide.ejs") %>
+
+    <div class="container__hotdeal" >
+        <div class="container__hotdeal-header wow bounceInUp "  data-wow-duration="1s">
+            <div class="container__hotdeal-header-text">
+                MÀN HÌNH
+            </div>
+            <p>Xem tất cả</p>
+        </div>
+        <div class="container__hotdeal-main screen wow bounceInUp"  data-wow-duration="1s" style="display: flex;">
+            <div class="product-list card-deck autoplay ">
+                <%for(let product of screens){%>
+                    <%- include("component/product_item.ejs", {product: product})%>
+                <%}%>
+            </div>
+            <div class="product-item card text-center ">
+                <img src="/static/site/img/Màn-hình-mua-kèm-PC.jpg" alt="">
+            </div>
+        </div>
+        <div class="container__hotdeal-header wow bounceInUp" data-wow-duration="1s">
+            <div class="container__hotdeal-header-text">
+                VỎ CASE PC
+            </div>
+        </div>
+        <div class="container__hotdeal-main  wow bounceInUp" data-wow-duration="1s">
+            <div class="product-item card text-center">
+                <img src="/static/site/img/PC.jpg" alt="">
+            </div>
+            <div class="product-list card-deck autoplay ">
+                <%for(let product of cases){%>
+                    <%- include("component/product_item.ejs", {product: product})%>
+                <%}%>
+                
+            </div>
+        </div>
+
+    
+
+        <div class="container__hotdeal-header wow bounceInUp" data-wow-duration="1s">
+            <div class="container__hotdeal-header-text">
+               LAPTOP GAMING
+            </div>
+        </div>
+        <div class="container__hotdeal-main wow bounceInUp" data-wow-duration="1s">
+            <div class="product-list card-deck autoplay  ">
+                <%for(let product of laptops){%>
+                    <%- include("component/product_item.ejs", {product: product})%>
+                <%}%>
+            </div>
+            <div class="product-item card text-center ">
+                <img src="/static/site/img/MSI-trang-chủ.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="container__hotdeal-header wow bounceInUp" data-wow-duration="1s">
+            <div class="container__hotdeal-header-text">
+               CHUỘT
+            </div>
+        </div>
+        <div class="container__hotdeal-main wow bounceInUp" data-wow-duration="1s">
+            <div class="product-list card-deck autoplay  ">
+                <%for(let product of mouse){%>
+                    <%- include("component/product_item.ejs", {product: product})%>
+                <%}%>
+            </div>
+        </div>
+
+        <div class="container__hotdeal-header wow bounceInUp" data-wow-duration="1s">
+            <div class="container__hotdeal-header-text">
+               BÀN PHÍM
+            </div>
+        </div>
+        <div class="container__hotdeal-main wow bounceInUp" data-wow-duration="1s">
+            <div class="product-list card-deck autoplay  ">
+                <%for(let product of kb){%>
+                    <%- include("component/product_item.ejs", {product: product})%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+    <%- include("layout/footer.ejs") %>
+    <script>
+        $('.autoplay').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      
+      //   autoplay: true,
+      //   autoplaySpeed: 2000,
+      });
+      $('.slick-prev').text('<') ;
+      $('.slick-next').text('>') ;
+      $(function(){
+        let available = [];
+        let a;
+        let b;
+        let c;
+        '<%for(let product of all_products){%>'
+            b = '<%=product.name%>';
+            c = '<%=product.thumbnail%>';
+            a = {
+                name : b,
+                thumbnail : c,
+            }
+            available.push(b);
+            console.log(a);
+            console.log('a');
+        '<%}%>'
+        $('#tags').autocomplete({
+            source: available
+        });
+        console.log(available)
+      })
+        
+
+
+    </script>
+</body>
+
+</html>

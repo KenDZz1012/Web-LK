@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+    <%- include("layout/head.ejs", {title:"Build Case"}) %>
+    <link rel="stylesheet" href="/static/site/css/buildCase.css">
+    <link rel="stylesheet" href="/static/site/css/main.css">
+
+    <script src="/static/site/js/jquery-3.6.0.js"></script>
+    <script src = '/static/site/js/buildCase.js'></script> 
+    <script src = '/static/site/js/index.js'></script>    
+
+</head>
+    <!--Header-->
+    <div id="header">
+        <%- include("layout/header.ejs") %>
+        <%- include("layout/menu.ejs") %>
+    </div>
+
+
+
+    <!--content-->
+    <div id="container">
+        <div class="content__main">
+            <h2>Xây Dựng Cấu Hình Cho Riêng Mình</h2>
+        </div>
+        <div class="container_build">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item ">
+                  <h2 class="accordion-header " id="flush-headingOne">
+                    <button class="accordion-button collapsed  acc_case" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Vỏ Case PC
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="container__hotdeal-main">
+                        <div class="product-list case card-deck ">
+                            <%for(let product of cases){%>
+                                <div class="product-item card text-center left_case" id='<%=product.id%>' name=""  type="hidden" value=<%=product.id%>>
+                                  <input type="hidden" class='case_id' name="" value=<%=product.id%>>
+                                  <img src="/static/images/<%=product.thumbnail%>" class="card-img">
+                                    <h4 name='name' class="card-name" ><a href="#"><%=product.name%></a></h4>
+                                    <span name = 'price' class="card-price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%></span> 
+                                </div>
+                            <%}%>     
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Mainboard
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="container__hotdeal-main">
+                        <div class="product-list main card-deck">
+                            <%for(let product of mains){%>
+
+                                <div class="product-item card text-center left_main" id=''>
+                                  <input type="hidden" class='main_id' name="" value=<%=product.id%>>
+                                    <img src="/static/images/<%=product.thumbnail%>" class="card-img">
+                                    <h4 name='name' class="card-name" ><a href="#"><%=product.name%></a></h4>
+                                    <span name='price' class="card-price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%></span> 
+                                </div>
+                            <%}%>     
+                        </div>
+                    </div>                  
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                     VGA
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="container__hotdeal-main">
+                        <div class="product-list vga card-deck">
+                            <%for(let product of vgas){%>
+
+                                <div class="product-item card text-center left_vga" id=''>
+                                  <input type="hidden" class='vga_id' name="" value=<%=product.id%>>  
+                                  <img src="/static/images/<%=product.thumbnail%>" class="card-img">
+                                    <h4 name='name' class="card-name" ><a href="#"><%=product.name%></a></h4>
+                                    <span name='price' class="card-price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%></span> 
+                                </div>
+                            <%}%>     
+                        </div>
+                    </div>     
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        CPU
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                      <div class="container__hotdeal-main">
+                          <div class="product-list cpu card-deck">
+                              <%for(let product of cpus){%>
+                                  <div class="product-item card text-center left_cpu" id=''>
+                                    <input type="hidden" class='cpu_id' name="" value=<%=product.id%>>
+                                      <img src="/static/images/<%=product.thumbnail%>" class="card-img">
+                                      <h4 name='name' class="card-name" ><a href="#"><%=product.name%></a></h4>
+                                      <span name='price' class="card-price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%></span> 
+                                  </div>
+                              <%}%>     
+                          </div>
+                      </div>     
+                    </div>
+                  </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    PSU
+                  </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                  <div class="container__hotdeal-main">
+                      <div class="product-list psu card-deck">
+                          <%for(let product of psus){%>
+                              <div class="product-item card text-center left_psu" id=''>
+                                <input type="hidden" name="" class='psu_id' value=<%=product.id%>>  
+                                <img src="/static/images/<%=product.thumbnail%>" class="card-img">
+                                  <h4 name='name' class="card-name" ><a href="#"><%=product.name%></a></h4>
+                                  <span name='price' class="card-price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%></span> 
+                              </div>
+                          <%}%>     
+                      </div>
+                  </div>     
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                    RAM
+                  </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                  <div class="container__hotdeal-main">
+                      <div class="product-list ram card-deck">
+                          <%for(let product of rams){%>
+
+                              <div class="product-item card text-center left_ram" id='' >
+                                <input type="hidden" name="" class='ram_id' value=<%=product.id%>> 
+                                <img src="/static/images/<%=product.thumbnail%>" class="card-img">
+                                  <h4 name='name' class="card-name" ><a href="#"><%=product.name%></a></h4>
+                                  <span name='price' class="card-price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%></span> 
+                              </div>
+                          <%}%>     
+                      </div>
+                  </div>     
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                    Màn Hình
+                  </button>
+                </h2>
+                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                  <div class="container__hotdeal-main">
+                      <div class="product-list screen card-deck">
+                          <%for(let product of screens){%>
+                              <div class="product-item card text-center left_screen" id=''>
+                                <input type="hidden" name="" class='screen_id' value=<%=product.id%>>
+                                <img src="/static/images/<%=product.thumbnail%>" class="card-img">
+                                  <h4 name='name' class="card-name" ><a href="#"><%=product.name%></a></h4>
+                                  <span name='price' class="card-price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%></span> 
+                              </div>
+                          <%}%>     
+                      </div>
+                  </div>     
+                </div>
+              </div>
+
+          </div>
+
+          <form method="post" action="/site/addcart">
+
+          <div class="build_case">
+
+            <div class="item main" id='main'>
+
+            </div>
+            <div class="item cpu" id='cpu'>
+              
+            </div>
+            <div class="item vga" id = 'vga'>
+              
+            </div>
+            <div class="item case" id ='case'>
+                
+            </div>
+            <div class="item psu" id = 'psu'>
+              
+            </div>
+            <div class="item screen" id = 'screen'>
+              
+            </div>
+            <div class="item ram" id = 'ram'>
+              
+            </div>
+          </div>
+        </div>
+          <span class="container__des-btn">          
+              <button type="submit"  class="btn btn-primary product-btn">Thêm vào giỏ hàng</button>
+          </span>
+        </form>
+
+    </div>
+
+
+
+    <!--Footer-->
+    <%- include("layout/footer.ejs") %>
+
+
+<script>
+    
+    const right_case = $('#case');
+    $(document).on("click",'.left_case',function(room){
+      let b ;
+        const case_id = $(this).attr('id');
+        '<%for(let product of cases){%>'
+            b = '<%=product.id%>';
+            if(b  ===  case_id)
+            {
+              name = '<%=product.name%>';
+              thumbnail = '<%=product.thumbnail%>';
+              price = '<%=product.price%>'
+            }
+        '<%}%>'
+        console.log(name);
+        console.log(case_id);
+        const html =` <div class="product-item card text-center left_case" id='' name=""  type="hidden" value=${case_id}>
+                      <input type="hidden" class='case_id' name="" value=${case_id}>
+                      <img src="/static/images/${thumbnail}" class="card-img">
+                      <h4 name='name' class="card-name" ><a href="#">${name}</a></h4>
+                      <span name = 'price' class="card-price">${new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(price)}</span> 
+                      </div>`
+        right_case.empty();
+        right_case.prepend(html); 
+        let a=$('.item >.card>.case_id');
+        a.attr({
+          'name':'case_id'
+        }) 
+        $('.acc_case').click();
+    })
+</script>
+
+</body>
+</html>
+

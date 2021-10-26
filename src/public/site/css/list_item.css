@@ -1,0 +1,117 @@
+
+.content__main{
+    width: 80%;
+    /* margin: auto; */
+    /* border: 1px solid black; */
+    height: auto;
+    margin-top: 50px;
+}
+
+.content__main > h2{
+    margin: 10px 60px;
+    color: rgb(255, 24, 24);
+}
+
+.content__main--title{
+    width: 90%;
+    height: 40px;
+    margin: 20px auto;
+}
+
+.content__main--title > .content__main--title-left {
+    float: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.content__main--title > .content__main--title-right{
+    float: right;
+    margin-top: 12px;
+}
+
+.content__main--title > .content__main--title-left > button{
+    width: 112px;
+    height: 32px;
+    border: none;
+    border-right: 1px solid #ccc;
+    outline: 1px solid #ccc;
+    color: black;
+    background-color: #ccc;
+
+}
+
+.content__main--title > .content__main--title-left > button:first-child{
+    color: #fff;
+    background-color: #e93434;
+}
+
+
+.content__main > .content__main--list >ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+
+.content__main--list-item{
+    /* background-color:black; */
+    width: 300px;
+    height:450px;
+}
+.content__main--list-item:hover{
+    /* box-shadow: 4px 4px  4px 4px #ccc; */
+    cursor: pointer;
+}
+.content__main--list-item:hover .content__main--list-item-img{
+    transform:scale(1.1);
+}
+.content__main--list-item-img{
+    width: 200px;
+    margin: 40px 50px auto 50px;
+    transition: 0.5s;
+}
+.content__main--list-item-name{
+    margin: auto;
+    line-height:32px;
+    text-align:center;
+    
+}
+.content__main--list-item-link{
+    margin: auto;
+    text-decoration: none;
+    color: black;
+}
+.content__main--list-item-price{
+    margin-top: 70px;
+    display: block;
+    /* justify-content: space-between; */
+    /* z-index: 1; */
+}
+.content__main--list-item-first-price{
+    color: rgb(155, 151, 151);
+    text-decoration: line-through;
+    float: left;
+    /* background-color: #efefef; */
+    margin-top: -60px;
+    margin-left: 10px;
+}
+.content__main--list-item-second-price{
+    color:  #e93434;
+    /* background-color: #e93434; */
+    /* padding: 20px; */
+    margin-left: 10px;
+    /* margin-top: 10px; */
+    font-size: 24px;
+    font-weight: 700;
+}
+.content__main--list-item-logo
+{
+    width: 120px;
+    height:120px;
+    float: right;
+    margin-top: -90px;
+}
+.content__main--list-item-link:hover{
+    color: #e93434;
+}

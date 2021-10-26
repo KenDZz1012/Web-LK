@@ -1,0 +1,37 @@
+<div class="header__navbar active_center">
+    <div class="header__navbar-logo ">
+       <a href="/site/index"> <img src="/static/site/img/logo_transparent.png" alt="logo" class="header__navbar-img"></a>
+    </div>
+    <div class="header__navbar-search">
+        <form class="form-inline" method="GET" action="/search" style="display: flex;">
+            <div class="ui-widget">
+                <label for="tags" width='20px;font-size:12px'></label> 
+                <input id="tags" style='height:40px;font-size:20px;margin-top: -1px;' type="search" id="search" name = 'keyword' class="header__navbar-input-search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search"/>
+                <br> 
+            </div>
+            <button class="header__navbar-search-btn" value="Tìm kiếm"  type="submit">
+                <span class="header__search-btn-text">TÌM KIẾM</span>
+            </button>
+        </form>
+      
+
+    </div>
+    <div class="header__navbar-cart">
+        <a href="/cart" target="_blank">
+            <span>
+                <span class="total_cart">
+                    <%=totalCartItem%>
+                </span>
+            </span>
+        <img src="/static/site/img/iconfinder_shopping-cart_326700.svg" alt="cart" class="header__cart-icon">
+        </a>
+    </div>
+    <!-- <div class="header__navbar-login">
+        <img src="/static/site/img/iconfinder_person-people-man-profile-human_3643745.svg" alt="account" class="header__account-icon">
+        <div class="header__account-login">
+            <a href="Login.html" target="_blank" class="login">Đăng nhập</a>
+            <a href="reg.html" target="_blank" class="login">Đăng ký</a>
+        </div>   
+    </div> -->
+</div>
+

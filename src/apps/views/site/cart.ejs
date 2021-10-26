@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layout/head.ejs", {title:"Giỏ Hàng"}) %>   
+    <link rel="stylesheet" href="/static/site/css/cart.css">
+    <script src="/static/site/js/jquery-3.6.0.js"></script>
+    <script src="/static/site/js/cart.js"></script>
+</head>
+<body>
+
+    <!-- header -->
+    <div id="header">
+        <%- include("layout/header.ejs") %>
+        <%- include("layout/menu.ejs") %>
+    </div>
+
+    <!-- container-->
+    <div id="content">
+        <div class="content__main">
+            <h2>Giỏ Hàng</h2>
+            <div class="content__main--form">
+                <table class="cart" border="1">
+                    <thead>
+                        <tr>
+                            <th class="image">Sản phẩm</th>
+                            <th class="item">Tên sản phẩm</th>
+                            <th class="qty">Số lượng</th>
+                            <th class="price">Giá tiền</th>
+                            <th class="remove">Xoá</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <form method="post" action="/update_cart">
+                        <%for(let product of products){%>
+                            <%totalPrice+=product.qty*product.price%>
+                        <tr class="cart__product--item">
+                            <td class="image">
+                                <div class="product_image">
+                                    <a href="">
+                                        <img src="/static/images/<%=product.thumbnail%>">
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="item">
+                                <a href="">
+                                    <strong><%=product.name%></strong>
+                                    
+                                </a>
+                            </td>
+                            <td class="qty">
+                                <input type="number" name='products[<%=product.id%>][qty]' value="<%=product.qty%>" max = "10" min = "1">
+                            </td>
+                            <td class="price"><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price*product.qty)%></td>
+                            <td class="remove">
+                                 <a href="/del-cart-<%=product.id%>"><img width="30px" src="/static/site/logo/delete_logo.svg" alt=""></a>
+                            </td>
+                        </tr>
+                        <%}%>
+                        <tr class="btn">
+                            <td colspan="5" style="font-weight: bold; font-size: 20px;">
+                                <button type="submit" name="sbm" class="btn__up">Cập Nhập</button>
+                            </td>
+                        </tr>
+                        </form>
+
+
+
+                        <!-- Sản Phẩm-->
+                        <tr class="summary" id="tong_tien">
+                            <td colspan="4" style="font-weight: bold; font-size: 20px;">Tổng tiền:</td>
+                            
+                            <td class="price">
+                                <span class="total">
+                                    <strong><%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(totalPrice)%></strong>
+                                </span>
+                            </td>								
+                        </tr>
+
+
+                        <!-- Ghi chú -->
+                        <form method="post" action="/order">
+                        <tr class="cartnote" id="cartnote">
+                            <td colspan="5" style="font-weight: bold; font-size: 20px;" class='row_info'>
+                                <div id="customer-name" class="col-lg-4 col-md-4 col-sm-12 info" >
+                                    <input placeholder="Họ và tên (bắt buộc)" type="text" name="name" class="form-control" required>
+                                </div>
+                                <div id="customer-phone" class="col-lg-4 col-md-4 col-sm-12 info">
+                                    <input placeholder="Số điện thoại (bắt buộc)" type="text" name="phone" class="form-control" required>
+                                </div>
+                                <div id="customer-mail" class="col-lg-4 col-md-4 col-sm-12 info">
+                                    <input placeholder="Email (bắt buộc)" type="text" name="mail" class="form-control" required>
+                                </div>
+                                <div id="customer-add" class="col-lg-12 col-md-12 col-sm-12 info">
+                                    <input placeholder="Địa chỉ nhà riêng hoặc cơ quan (bắt buộc)" type="text" name="add" class="form-control" required>
+                                </div>
+                            </td>                
+                        </tr>
+                        <tr class="btn">
+                            <td colspan="5" style="font-weight: bold; font-size: 20px;">
+                                <button type="submit" name="sbm" class="btn__up" style='width: 140px;'>Thanh Toán</button>
+                            </td>
+                        </tr>
+                        <!-- Ghi chú -->
+                        </form>
+
+                      
+                    </tbody>
+                  </table>
+                  
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <!-- footer -->
+    <%- include("layout/footer.ejs") %>
+
+</body>
+</html>

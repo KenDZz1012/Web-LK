@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layout/head.ejs", {title:"Sản Phẩm"}) %>   
+    <link rel="stylesheet" href="/static/site/css/product.css">
+    <!-- <link rel="stylesheet" href="/static/site/css/main.css"> -->
+    <script src="/static/site/js/jquery-3.6.0.js"></script>
+    <script src="/static/site/js/product.js"></script>
+    <script src="/static/site/js/index.js"></script>
+
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+        <%- include("layout/header.ejs") %>
+        <%- include("layout/menu.ejs") %>
+    </div>
+    <!-- Container -->
+    <div id="container">
+        <div class="container_body">
+            <div class="container__img">
+            <img style="display:block" src="/static/images/<%=product.thumbnail%>" alt="product" class="container__img-product">
+            <img style="display:none" src="/static/images/<%=product.second_img%>" alt="product" class="container__img-product">
+            <img style="display:none" src="/static/images/<%=product.third_img%>" alt="product" class="container__img-product">
+            <div class="container__subimg">
+                <ul class="container__subimg-list">
+                    <li>
+                        <img src="/static/images/<%=product.thumbnail%> " alt="" class="container__subimg-list-item" id="0">
+                    </li>
+                    <%if(product.second_img){%>
+                    <li>
+                        <img src="/static/images/<%=product.second_img%>" alt="" class="container__subimg-list-item" id="1">
+                    </li>
+                    <%}%>
+                    <%if(product.third_img){%>
+                    <li>
+                        <img src="/static/images/<%=product.third_img%>" alt="" class="container__subimg-list-item" id="2">
+                    </li>
+                    <%}%>
+
+                </ul>
+            </div>
+        </div>
+        <form method="post" action="/site/add-to-cart">
+        <div class="container__des">
+            <div class="container__des-name">
+                <%=product.name%>
+            </div>
+            <div class="container__des-logo">
+                <img src="/static/site/img/logo_transparent.png" alt="" class="product-logo">
+            </div>
+            <div class="container__des-product">
+                <ul class="container__des-product-list">
+                    <li class="container__des-product-list-item">Bảo Hành:<%=product.warranty%></li>
+                    <li class="container__des-product-list-item">Hãng: <%=product.cat_id.brand%></li>
+                    <li class="container__des-product-list-item">Phụ Kiện Đi Kèm:<%=product.accessories%></li>
+                    <li class="container__des-product-list-item">Tình Trạng:<%=product.status%></li>
+                    <li class="container__des-product-list-item">Khuyến Mãi:<%=product.promotion%></li>
+                </ul>
+            </div>
+            <div class="container__des-price">
+                <%=new Intl.NumberFormat("vi-VN",{style:"currency",currency:"VND",}).format(product.price)%>
+                <div class="col-sm-3 my-1">
+                    <div class="input-group">
+                        <input type="number" class="form-control" min="1" value="1" name="qty" id="quantity" placeholder="Số lượng">
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="id" value=<%=product.id%>>
+            <span class="container__des-btn">          
+                <button type="submit"  class="btn btn-primary product-btn">Thêm vào giỏ hàng</button>
+            </span>
+        </div>
+        </form>
+        </div>
+        <div class="des">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>Đánh giá về laptop</h3>
+                <h5><%=product.description%></h5>
+            </div>
+        </div>
+
+
+        <div class="container__hotdeal-header">
+            <div class="container__hotdeal-header-text">
+               Sản Phẩm Liên Quan
+            </div>
+        </div>
+        <div class="container__hotdeal-main">
+            <div class="product-list card-deck autoplay">
+                <%for(let product of relative){%>
+                    <%- include("component/product_item.ejs", {product: product})%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <%- include("layout/footer.ejs") %>
+    <script>
+        $('.autoplay').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          
+          //   autoplay: true,
+          //   autoplaySpeed: 2000,
+          });
+          $('.slick-prev').text('<') ;
+          $('.slick-next').text('>') ;
+    </script>
+</body>
+</html>

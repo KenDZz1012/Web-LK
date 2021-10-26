@@ -1,0 +1,341 @@
+<div class="header__menu position">
+    <ul class="header__menu-list active_center">
+        <li class="header__menu-list-items"> 
+            <div class="header__menu-list-items-first-link">
+            <img src="/static/site/img/iconfinder_menu_4092560.svg" alt="list" class="icon-list">
+                DANH MỤC
+            </div>
+            <ul class="header__menu-subnav-list">
+                <li class="header__menu-subnav-item">
+                    LINH KIỆN PC
+                    <ul class="header__subnav-first-list">
+                        <%for(category of lk){%>
+                            <li class="header__subnav-first-list-items"><a href="/category-<%=category.slug%>.<%=category.id%>"><%=category.title%></a>
+                                <ul class="laptop-list">
+                                <%if(category.title == 'VGA'){%>
+                                    <%for(type of vga_nvi){%> 
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                <%}%>
+                                <%if(category.title == 'MAINBOARD'){%>
+                                    <%for(type of main){%> 
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                <%}%>
+                                <%if(category.title == 'CPU'){%>
+                                    <%for(type of cpu){%> 
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                <%}%>
+                                <%if(category.title == 'RAM'){%>
+                                    <%for(type of ram){%> 
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                <%}%>
+                                <%if(category.title == 'PSU'){%>
+                                    <%for(type of psu){%> 
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                <%}%>
+                                <%if(category.title == 'CASE'){%>
+                                    <%for(item of brand_case){%> 
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/brand.<%=item.id%>" class="laptop-list-item-link">
+                                                <%=item.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                <%}%>
+                                <%if(category.title == 'Ổ CỨNG'){%>
+                                    <%for(item of brand_oc){%> 
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/brand.<%=item.id%>" class="laptop-list-item-link">
+                                                <%=item.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                <%}%>
+                                </ul>
+                            </li>
+                        <%}%>
+                        </ul>
+                </li>
+                <%for(category of cat){%>
+                <li class="header__menu-subnav-item">
+                    <a href="/category-<%=category.slug%>.<%=category.id%>">
+                        <%=category.title%>
+                    </a>
+                    <%if(category.title == 'LAPTOP'){%>
+                        <ul class="header__subnav-first-list" style="width: 800px !important;">
+                            <%for(brand of brand_laptop){%>
+                                <li class="header__subnav-first-list-items">
+                                    <a href="/category-<%=category.slug%>.<%=category.id%>/brand.<%=brand.id%>">
+                                        <%=brand.title%>
+                                    </a>
+                                    <%if(brand.title == 'Asus'){%>
+                                        <ul class="laptop-list">
+                                            <%for(let type of lap_asus){%>
+                                                <li class="laptop-list-item">
+                                                    <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                        <%=type.title%>
+                                                    </a>
+                                                </li>   
+                                            <%}%>
+                                        </ul>
+                                    <%}%>
+                                    <%if(brand.title == 'Acer'){%>
+                                        <ul class="laptop-list">
+                                            <%for(let type of lap_acer){%>
+                                                <li class="laptop-list-item">
+                                                    <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                        <%=type.title%>
+                                                    </a>
+                                                </li>   
+                                            <%}%>
+                                        </ul>
+                                    <%}%>
+                                    <%if(brand.title == 'MSI'){%>
+                                        <ul class="laptop-list">
+                                            <%for(let type of lap_msi){%>
+                                                <li class="laptop-list-item">
+                                                    <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                        <%=type.title%>
+                                                    </a>
+                                                </li>   
+                                            <%}%>
+                                        </ul>
+                                    <%}%>
+                                    <%if(brand.title == 'DELL'){%>
+                                        <ul class="laptop-list">
+                                            <%for(let type of lap_dell){%>
+                                                <li class="laptop-list-item">
+                                                    <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                        <%=type.title%>
+                                                    </a>
+                                                </li>   
+                                            <%}%>
+                                        </ul>
+                                    <%}%>
+                                </li>
+                            <%}%>
+                            <li class="header__subnav-first-list-items" style="margin-left: 12px !important;">
+                                Theo Giá
+                                <ul class="laptop-list">
+                                    <%for(let price of pri_lap){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/price.<%=price.id%>" class="laptop-list-item-link">
+                                                <%=price.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                        </ul>
+                    <%}%>
+                    <%if(category.title == 'BÀN PHÍM'){%>
+                        <ul class="header__subnav-first-list" style="width: 280px !important;">
+                            <li class="header__subnav-first-list-items">
+                                Theo Hãng
+                                <ul class="laptop-list">
+                                    <%for(let brand of brand_kb){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/brand.<%=brand.id%>" class="laptop-list-item-link">
+                                                <%=brand.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                            <li class="header__subnav-first-list-items">
+                                Theo Giá
+                                <ul class="laptop-list">
+                                    <%for(let price of pri_kb){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/price.<%=price.id%>" class="laptop-list-item-link">
+                                                <%=price.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                        </ul>
+                      
+                    <%}%>    
+                    <%if(category.title == 'CHUỘT'){%>
+                        <ul class="header__subnav-first-list" style="width: 280px !important;">
+                            <li class="header__subnav-first-list-items">
+                                Theo Hãng
+                                <ul class="laptop-list">
+                                    <%for(let brand of brand_mouse){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/brand.<%=brand.id%>" class="laptop-list-item-link">
+                                                <%=brand.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                            <li class="header__subnav-first-list-items">
+                                Theo Giá
+                                <ul class="laptop-list">
+                                    <%for(let price of pri_mouse){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/price.<%=price.id%>" class="laptop-list-item-link">
+                                                <%=price.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                        </ul>
+                      
+                    <%}%>
+                    <%if(category.title == 'TAI NGHE'){%>
+                        <ul class="header__subnav-first-list" style="width: 280px !important;">
+                            <li class="header__subnav-first-list-items">
+                                Theo Hãng
+                                <ul class="laptop-list">
+                                    <%for(let brand of brand_hp){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/brand.<%=brand.id%>" class="laptop-list-item-link">
+                                                <%=brand.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                            <li class="header__subnav-first-list-items">
+                                Theo Giá
+                                <ul class="laptop-list">
+                                    <%for(let price of pri_kb){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/price.<%=price.id%>" class="laptop-list-item-link">
+                                                <%=price.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                        </ul>
+                      
+                    <%}%>
+
+                    <%if(category.title == 'LK PC'){%>
+                        <ul class="header__subnav-first-list" style="width: 800px !important;">
+                            <li class="header__subnav-first-list-items">
+                                PC GAMING
+                                <ul class="laptop-list">
+                                    <%for(let type of pcgm){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                            <li class="header__subnav-first-list-items" style='margin-left: 20px !important;'>
+                                PC GAMING
+                                <ul class="laptop-list">
+                                    <%for(let type of pcof){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                            <li class="header__subnav-first-list-items" style='margin-left: 20px !important;'>
+                                Theo Giá
+                                <ul class="laptop-list">
+                                    <%for(let price of pri_pc){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/price.<%=price.id%>" class="laptop-list-item-link">
+                                                <%=price.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                        </ul>
+                      
+                    <%}%>
+                    <%if(category.title == 'MÀN HÌNH'){%>
+                        <ul class="header__subnav-first-list" style="width: 800px !important;">
+                            <li class="header__subnav-first-list-items">
+                                Theo Hãng
+                                <ul class="laptop-list">
+                                    <%for(let brand of brand_screen){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/brand.<%=brand.id%>" class="laptop-list-item-link">
+                                                <%=brand.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                            <li class="header__subnav-first-list-items" style='margin-left: 20px !important;'>
+                                Theo Giá
+                                <ul class="laptop-list">
+                                    <%for(let price of pri_screen){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/price.<%=price.id%>" class="laptop-list-item-link">
+                                                <%=price.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                            <li class="header__subnav-first-list-items" style='margin-left: 20px !important;'>
+                                Tần Số Quét
+                                <ul class="laptop-list">
+                                    <%for(let type of screen){%>
+                                        <li class="laptop-list-item">
+                                            <a href="/category-<%=category.slug%>.<%=category.id%>/type.<%=type.id%>" class="laptop-list-item-link">
+                                                <%=type.title%>
+                                            </a>
+                                        </li>   
+                                    <%}%>
+                                </ul>
+                            </li>
+                        </ul>
+                      
+                    <%}%>
+                </li>
+                <%}%>
+            </ul>
+
+
+
+
+
+
+
+
+
+        </li>   
+        <li class="header__menu-list-items"><a href="site/recruit" target="_blank"class="header__menu-list-items-link">Tuyển dụng</a></li>
+        <li class="header__menu-list-items"><a href="/build-case" target="_blank"class="header__menu-list-items-link">Xây Dựng Cấu Hình</a></li>
+    </ul>
+</div>

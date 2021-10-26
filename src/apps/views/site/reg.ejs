@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layout/head.ejs", {title:"Form Tuyển Dụng"}) %>   
+    <link rel="stylesheet" href="/static/site/css/header_footer.css">
+    <link rel="stylesheet" href="/static/site/css/reg.css">
+</head>
+<body>
+
+    <!-- header -->
+    <div id="header">
+        <%- include("layout/header.ejs") %>
+        <%- include("layout/menu.ejs") %>
+    </div>
+    <div id="container">
+        <div class="contai__main">
+            <div class="form__reg">
+                <h2>Form đăng kí tuyển dụng vị trí <%=position.name%></h2>
+                <form role="form" method="post"  action='/addToSs'>
+                    <input type="hidden" required name="pos_id" value=<%=position.id%>>
+                    <div class="form__reg--line form-group">
+                        <div class="form__reg--line-left form-group">
+                            <span>Họ và tên</span>
+                            <input type="text" name="name" id="" required class="" placeholder="Họ *">
+                        </div>
+                        <select name="gender" class="form-group form__reg--line-right" style="height: 40px;margin-top:28px;border: none;border-radius:14px">
+                            <option value='Nam' selected>Nam</option>
+                            <option value='Nữ'>Nữ</option>
+                        </select>
+                    </div>
+                    
+
+                    <div class="form-group form__reg--line">
+                        <div class="form-group form__reg--line-left">
+                            <span>Tuổi</span>
+                            <input type="text" name="birth">
+                        </div>
+                        <div class="form-group form__reg--line-right">
+                            <span>Số Điện Thoại</span>
+                            <input type="text" name="sdt"  class="" placeholder="Số Điện Thoại *">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group form__reg--line">
+                        <div class="form__reg--line-left form-group">
+                            <span>Email</span>
+                            <input type="text" name="email" class="" placeholder="Email *">
+                        </div>
+                        <div class="form__reg--line-right form-group">
+                            <span>Địa Chỉ</span>
+                            <input type="text" name="adress"  class="" placeholder="Địa Chỉ *">
+                        </div>
+                    </div>
+                    
+                    <div class="form__reg--line form-group">
+                        <div class="form__reg--line-right form-group">
+                            <span>Giới thiệu về bản thân</span>
+                            <input type="text" name="description" class="des" placeholder="Giới thiệu về bản thân*">
+                        </div>
+                        
+                    </div>
+                    <!--  -->
+
+                    <input type="submit" value="Submit" class="btn_sbm">
+                </form>
+            </div>
+            <div class="bg_logo">
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <%- include("layout/footer.ejs") %>
+
+</body>
+</html>

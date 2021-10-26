@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("layout/head.ejs", {title:"Danh sách sản phẩm"}) %>
+    <link rel="stylesheet" href="/static/site/css/main.css">
+    <link rel="stylesheet" href="/static/site/css/cate.css">
+    <script src="/static/site/js/jquery-3.6.0.js"></script>
+    <script src="/static/site/js/index.js"></script>
+
+</head>
+
+<body>
+
+    <!-- header -->
+    <div id="header">
+        <%- include("layout/header.ejs") %>
+        <%- include("layout/menu.ejs") %>
+    </div>
+    <!-- container -->
+    <div id="container">
+    <div class="container__hotdeal">
+        <div class="container__hotdeal-header-text">
+            Trang Chủ/<%=title%>
+         </div>
+        <div class="container__hotdeal-main">
+            <%if(title == 'laptop') {%>
+                <form class="form-inline" method="GET" enctype="multipart/form-data" action="/pick" style="display: flex;margin-top:40px">
+                    <input type="hidden" name="cat_id" value=<%=cat_id%>>
+                    <div class="option">
+                    <div class="brand">
+                        <div class="brand_title">Theo Hãng</div>
+                            <div class="brand_list">
+                            <%for(brand of brand_lap){%>
+                                <div class="brand_item" style="display:flex; padding:8px;">
+                                    <input type="radio" name='brand' value="<%=brand.title%>"><span class='cb_text' style="margin-top: -6px;color:white;"><%=brand.title%></span>
+                                </div>
+                            <%}%>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="price_title">Theo Giá</div>
+                            <div class="price_list">
+                            <%for(price of pri_lap){%>
+                                <div class="price_item" style="display:flex; padding:8px;">
+                                    <input type="radio" name='price' value="<%=price.title%>"><span class='cb_text' style="margin-top: -5px;color:white;width: 462px;"><%=price.title%></span>
+ 
+                                </div>
+                            <%}%>
+                        </div>
+                    </div>
+                    <button class="header__navbar-search-btn" value="Tìm kiếm"  type="submit">
+                        <span class="header__search-btn-text">TÌM KIẾM</span>
+                    </button>
+                </div>
+            </form>
+
+               
+            <%}%>
+            
+            <div class="product-list card-deck">
+                <%for(let product of products){%>
+                    <%- include("component/product_item.ejs", {product: product})%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <%- include("layout/footer.ejs") %>
+
+    
+
+</div>
+</body>
+
+</html>

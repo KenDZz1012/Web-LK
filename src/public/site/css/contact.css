@@ -1,0 +1,135 @@
+
+
+
+
+#container{
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+}
+
+.contai__main{
+    background-color: #f6f6f6;
+    height: 650px;
+    margin-top: 50px;
+    border-radius: 15px;
+    width: 1280px;
+    max-width: 1280px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.contai__left{
+    width: 25%;
+    float: left;
+    margin: 100px 0 0 0;
+}
+
+.contai__right{
+    width: 75%;
+    float: right;
+    margin: 60px 0 0 0;
+}
+.contai__right--map{
+    width: 90%;
+    margin: 5px 42px;
+}
+
+.contai__left--list{
+    list-style-type: none;
+}
+
+.contai__left--list > li{
+    padding: 20px 0;
+    width: 100%;
+
+    display: inline-block;
+    
+}
+.contai__left--list > li > .contai__left--list-icon{
+    width: 30%;
+    float: left;
+}
+
+.contai__left--list-text{
+    float: left;
+    width: 69%;
+    color: #666;
+    opacity: 0.9;
+    font-size: 14px;
+    text-align: left;
+}
+.contai__left--list > li > .contai__left--list-icon > img{
+    width: 44px;
+    border-right: 1px solid black;
+    margin: 15px;
+}
+
+.contai__contact{
+    height: 600px;
+    border-radius: 15px;
+    width: 1280px;
+    max-width: 1280px;
+    margin: auto;
+    background-color: #f6f6f6;
+}
+
+.contai__contact > h3{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.contai__contact--form{
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.contai__contact--form input[type='text']{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px 4%;
+    padding: 5px;
+}
+
+.contai__contact--form input[type='text']:focus{
+    outline: none;
+}
+.contai__contact--form input[type='text']:hover{
+    border: 1px solid #dd6c6c;
+}
+.contai__contact--form textarea{
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    width: 89%;
+    height: 300px;
+    margin: 10px 4%;
+    padding: 10px;
+}
+
+.contai__contact--form textarea:focus{
+    outline: none;
+}
+.contai__contact--form textarea:hover{
+    border: 1px solid #dd6c6c;
+    padding: 9px;
+}
+
+.contai__contact--form input[type='submit']{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    margin: 0 43%;
+}
+
+.contai__contact--form input[type='submit']:focus{
+    outline: none;
+}
+
+.contai__contact--form input[type='submit']:hover{
+    border: 1px solid #dd6c6c;
+}
