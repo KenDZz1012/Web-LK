@@ -1,1 +1,1 @@
-worker: node src/bin/www
+worker: nodemon src/bin/www
