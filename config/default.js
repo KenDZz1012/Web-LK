@@ -1,6 +1,6 @@
 module.exports={
     app:{
-        port:3000,
+        port: process.env.PORT || 3000,
         views_floder: __dirname+'/../src/apps/views',
         views_engine: 'ejs',
         static_folder: __dirname+'/../src/public',
