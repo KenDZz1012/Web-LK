@@ -11,7 +11,9 @@ const RecController = require('../apps/controllers/reg')
 const CartController = require('../apps/controllers/cart')
 const ProductModel = require('../apps/models/product')
 
-
+router.get('/',(req,res)=>{
+    return res.send('hello'),
+})
 router.get('/test1',TestController.test1);
 //dashboard
 router.get('/admin',AdminController.index);
