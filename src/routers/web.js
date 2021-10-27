@@ -12,7 +12,7 @@ const CartController = require('../apps/controllers/cart')
 const ProductModel = require('../apps/models/product')
 
 router.get('/',(req,res)=>{
-    return res.send('hello'),
+    res.send('hello'),
 })
 router.get('/test1',TestController.test1);
 //dashboard
